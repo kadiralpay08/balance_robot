@@ -168,9 +168,9 @@ void loop() {
   if (output < 0){
     forward = false;
   }
-  //moveMotor(AIN1, AIN2, PWMA, abs(output), forward);
-  //moveMotor(BIN1, BIN2, PWMB, abs(output), forward);
-  Serial.println(angle);
+  moveMotor(AIN1, AIN2, PWMA, abs(output), forward);
+  moveMotor(BIN1, BIN2, PWMB, abs(output), forward);
+  //Serial.println(angle);
   vTaskDelayUntil(&last_wake_time, pdMS_TO_TICKS(8));
 }
 
